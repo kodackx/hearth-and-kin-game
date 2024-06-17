@@ -1,17 +1,12 @@
 # Hearth and Kin
-[![Hearth and Kin](https://github.com/kodackx/hearth_and_kin/actions/workflows/build.yml/badge.svg)](https://github.com/kodackx/hearth_and_kin/actions/workflows/build.yml)
-
-This is a FastAPI application that uses several libraries and APIs to provide a chat interface with various features.
-MIRO Board: https://miro.com/app/board/uXjVNDj7Uxc=/
 
 ## Libraries and APIs Used
 
 - FastAPI: A modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 - SQLModel: SQL databases in Python, designed for simplicity, compatibility, and robustness.
 - OpenAI: An API for accessing OpenAI's artificial intelligence models.
-- dotenv: A library to read environment variables from a .env file.
-- bcrypt: A library to help hash passwords.
-- Pillow: A library for opening, manipulating, and saving many different image file formats.
+- nVIdia NIM: API endpoints for working with a large number of models, that we can choose from
+- ElevenLabs: A text-to-audio generative model with very convincing voices and tone
 - Uvicorn: A lightning-fast ASGI server implementation, using uvloop and httptools.
 
 ## Key Features
@@ -25,10 +20,11 @@ MIRO Board: https://miro.com/app/board/uXjVNDj7Uxc=/
 
 The main application is created as a FastAPI object. The application is configured to use a SQLite database located at 'db/test.db'.
 
-A User model is defined for the database with the following fields:
-- id: A unique identifier for each user.
-- username: A unique username for each user.
-- password: The user's password.
+Several models are defined with SQLModel for:
+- Users
+- Stories
+- Characters
+- Sessions
 
 ## Environment Variables
 
@@ -36,6 +32,7 @@ The application uses the following environment variables:
 - OPENAI_API_KEY: The API key for OpenAI.
 - ELEVENLABS_API_KEY: The API key for ElevenLabs.
 - ELEVENLABS_VOICE_ID: The voice ID for ElevenLabs.
+- NVIDIA_API_KEY: API Key for LLMs.
 
 ## Development
 
@@ -53,7 +50,7 @@ Connect poetry to the proper version of python
 poetry env use $(which python)
 ```
 
-Install dependencies locally
+Install dependencies locally. You can use docker!
 
 ```bash
 make install
