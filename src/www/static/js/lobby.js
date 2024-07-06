@@ -72,7 +72,7 @@ async function checkPartyLead() {
         });
     } catch (error) {
         console.error('Error checking party lead:', error);
-        showToast(`Error checking party lead: ${error.message}`);
+        // showToast(`Error checking party lead: ${error.message}`);
     }
 }
 
@@ -88,7 +88,7 @@ async function fetchStoryDetails(story_id) {
         });
     } catch (error) {
         console.error('Error fetching story model configuration:', error);
-        showToast(`Error fetching story model configuration: ${error.message}`);
+        // showToast(`Error fetching story model configuration: ${error.message}`);
     }
 }
 
@@ -118,11 +118,11 @@ function updateStoryModels() {
     })
     .then(response => handleApiErrors(response, data => {
         console.log('Success:', data);
-        showToast('Story models updated successfully.');
+        // showToast('Story models updated successfully.');
     }))
     .catch((error) => {
         console.error('Error:', error);
-        showToast(`Error updating story models: ${error.message}`);
+        // showToast(`Error updating story models: ${error.message}`);
     });
 }
 
@@ -135,7 +135,8 @@ async function obtainInviteCode() {
             document.getElementById('invite-code').textContent = inviteCode;
         });
     } catch (error) {
-        showToast(`Error fetching invite code: ${error.message}`);
+        // showToast(`Error fetching invite code: ${error.message}`);
+        console.error('Error:', error)
     }
 }
 
@@ -171,14 +172,16 @@ async function fetchStoryCharacters(story_id) {
             });
         });
     } catch (error) {
-        showToast(`Error fetching story characters: ${error.message}`);
+        // showToast(`Error fetching story characters: ${error.message}`);
+        console.log(`Error fetching story characters: ${error.message}`);
     }
 }
 
 function notifyPresence() {
     const character = localStorage.getItem('selectedCharacter');
     if (!character) {
-        showToast('No character selected.');
+        // showToast('No character selected.');
+        console.error('No character selected.');
         return;
     }
 

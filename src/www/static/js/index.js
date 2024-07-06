@@ -46,6 +46,7 @@ function login() {
         }
     }))
     .catch((error) => {
-        showToast(`Frontend Error: ${error.message}`);
+        // showToast(`Frontend Error: ${error.message}`);
+        console.log(`Frontend Error: ${error.message}`);
     });
 }

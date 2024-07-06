@@ -83,7 +83,8 @@ async function obtainInviteCode() {
             // document.getElementById('invite-code').textContent = inviteCode;
         });
     } catch (error) {
-        showToast(`Error fetching invite code: ${error.message}`);
+        //showToast(`Error fetching invite code: ${error.message}`);
+        console.error(`Error fetching invite code: ${error.message}`);
     }
 }
 
@@ -151,7 +152,8 @@ async function drawStoryPage() {
         }
     }))
     .catch((error) => {
-        showToast(`Frontend Error: ${error.message}`);
+        //showToast(`Frontend Error: ${error.message}`);
+        console.error(`Frontend Error: ${error.message}`);
     })
 }
 

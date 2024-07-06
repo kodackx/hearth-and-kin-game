@@ -103,5 +103,5 @@ export function showToast(message) {
         }, 500);
     }, 5000);
 
-    console.log("Showing toast message for error: " + message);
+    console.log("Showing toast message: " + message);
 }

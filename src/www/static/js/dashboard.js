@@ -112,7 +112,8 @@ async function getCharactersForUser() {
             return data;
         });
     } catch (error) {
-        showToast(`Frontend Error: ${error.message}`);
+        //showToast(`Frontend Error: ${error.message}`);
+        console.error(`Frontend Error: ${error.message}`)
         throw error;
     }
 }
@@ -247,7 +248,8 @@ function loadStories(character_id) {
         };
     }))
     .catch((error) => {
-        showToast(`Frontend Error: ${error.message}`);
+        // showToast(`Frontend Error: ${error.message}`);
+        console.error(`Frontend Error: ${error.message}`);
     });
 }
 
@@ -348,7 +350,8 @@ async function joinStoryByInviteCode(inviteCode) {
             });
         });
     } catch (error) {
-        showToast(`Error: ${error.message}`);
+        // showToast(`Error: ${error.message}`);
+        console.error(`Error: ${error.message}`);
     }
 }
 
@@ -385,7 +388,8 @@ function deleteStory(box) {
         drawDeletedStory(box);
     }))
     .catch((error) => {
-        showToast(`Frontend Error: ${error.message}`);
+        //showToast(`Frontend Error: ${error.message}`);
+        console.error(`Frontend Error: ${error.message}`);
     });
 };
 
@@ -407,7 +411,8 @@ function leaveStory(box) {
         drawLeftStory(box);
     }))
     .catch((error) => {
-        showToast(`Frontend Error: ${error.message}`);
+        //showToast(`Frontend Error: ${error.message}`);
+        console.error(`Frontend Error: ${error.message}`);
     });
 };
 
